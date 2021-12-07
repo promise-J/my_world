@@ -8,243 +8,229 @@
     <link rel="stylesheet" href="asset/style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100;0,200;1,300&family=Urbanist:ital,wght@0,100;0,200;0,400;1,100;1,200;1,400&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
     <!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> -->
     <link rel="icon" href="favicon-16x16.png" type="image/png">
     <title>Jp's Home</title>
+
+    <style>
+        *{
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+          font-family: 'Urbanist', sans-serif;
+        }
+      </style>
 </head>
 <body>
     <header>
-        <!-- <img src="./asset/image/menu.svg" alt="picture"> -->
-        <!-- <i id="menu">menu</i> -->
-        <!-- <i id="menu" class="fas fa-bars">menu</i> -->
-        <div class="head-name">
-            PROMISE JOHNSON
-
+        <div class="headerLeft">
+           <h1>Johnson Promise</h1>
         </div>
-        <div class="head-links">
-            <div class="head-links-inner">
-                <a href="#skills">SKILLS</a>
-                <a href="#about">ABOUT</a>
-                <a href="#contact">CONTACT</a>
-                <a href="#projects">PROJECTS</a>
-            </div>
+        <div class="headerRight">
+           <ul class="headerLinkList">
+               <li class="headerLinkListItem">HOME</li>
+               <li class="headerLinkListItem">ABOUT</li>
+               <li class="headerLinkListItem">CONTACT</li>
+               <li class="headerLinkListItem">PROJECT</li>
+               <li class="headerLinkListItem">
+                <label>
+                    <input onChange={handleCheck} type="checkbox" />
+                    <span></span>
+                    <i className="indicator"></i>
+                </label>
+               </li>
+           </ul>
         </div>
     </header>
-    <div class="side-link">
-        <span class="cancel">X</span>
-        <ul>
-            <li><a href="#skills">SKILLS</a></li>
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">CONTACT</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
+    <div class="body-container">
+
+    <div class="sidebar sidebarLeft">
+        <ul class="sidebarList">
+            <li class="sidebarListItem"><i class="far fa-address-book"></i> </li>
+            <li class="sidebarListItem"><i class="fas fa-dungeon"></i> </li>
+            <li class="sidebarListItem"><i class="fas fa-tasks"></i> </li>
+            <li class="sidebarListItem"><i class="fas fa-poll"></i> </li>
         </ul>
     </div>
     <main>
-        <section class="img-section">
-
-            <div class="image1">
-                <img src="./asset/image/WhatsApp Image 2021-07-13 at 9.44.16 PM.jpeg" alt="">
-            </div>
-            <div class="image-text">
-                <h1>WELCOME! MEET PROMISE</h1>
-            </div>
-        </section>
-        <h1 class="project-heading" id="projects">PROJECTS</h1>
-        <section class="projects">
-            <div class="project">
-                <img src="./asset/image/deskApp.PNG" alt="">
-                <h2>DeskApp Room</h2>
-                <p class="project-desc">A chat room like app. It uses the ease of Firebase as a in creating and managing instance data as a data base. Includes React as the only front end. Desktop Responsive.</p>
-                <a class="project-link" href="https://desk-app-dbc1f.firebaseapp.com/">More</a>
-            </div>
-            <div class="project">
-                <img src="./asset/image/york-page.PNG" alt="">
-                <h2>Responsive Web site </h2>
-                <p class="project-desc">A full Responsive website across all devices. From the least to the most in details. Perfect😊.
+    <section class="introduction anim">
+        <div class="intro-text">
+           <p>Hi, My name is</p>
+           <h1>PROMISE JOHNSON</h1>
+           <h2>I BUILD AND DESIGN WEB APPLICATIONS</h2>
+           <p class="intro-port">I am a Software Engineer dedicated to building 
+               and designing (seldom times) your web applications. Give me your ideas and i bring it to life.
+           </p>
+        </div>
+    </section>
+    <section class="about anim">
+        <h1 class="about-title anim">ABOUT ME</h1>
+        <div class="about-container">
+            <div class="about-text">
+               <p>
+                   Hello! I am Johnson Promise. I am a <span>Web Developer</span> . I design web applications on the internet.
+                    My passion for this discipline started over three years ago when i attended a coding boot-camp 
+                    where i was taught <span>HTML5</span> and <span>CSS.</span>
+                   From building a personal comedy website to building sophiscated web apps and even deeper
+                    in <span>Projects Collaborations</span>.
+               </p>
+               <p>
+                   At this present day, working as a free lancer and part
+                    time with Solution Academy as a <span>mentor</span> and Head Of Department (HOD).
+                    Having organized a handful of <span>Boot-camps</span> programmes, I earned the Best staff of the year. (2018, 2019, 2020)
                 </p>
-                <a class="project-link" href="">More</a>
+                <p>A few of my most many technologies</p>
+                <ul class="about-list">
+                    <li class="about-list-item"><i class="fab fa-react"></i> React</li>
+                    <li class="about-list-item"><i class="fab fa-node"></i> Node.js</li>
+                    <li class="about-list-item"><i class="fab fa-git-square"></i> Git</li>
+                    <li class="about-list-item"><i class="fas fa-database"></i> MongoDB</li>
+                    <li class="about-list-item"><i class="fab fa-python"></i> Django</li>
+                </ul>
             </div>
-            <div class="project">
-                <img src="./asset/image/react-game.PNG" alt="">
-                <h2>React Quiz</h2>
-                <p class="project-desc">A quiz built with react with use of various hook. If you think React is impossible, think again. React is possible😅.
-                </p>
-                <a class="project-link" href="">More</a>
+            <div class="about-img-container">
+                <img src="./asset/image/jpDarkFace.jpg" alt="" class="about-img">
             </div>
-            <div class="project">
-                <img src="./asset/image/socialMern.PNG" alt="">
-                <h2>Social/Chatting App</h2>
-                <p class="project-desc">
-                    A chatting app that allows users post, create, and chat with other users. MERN Stack App.
-                </p>
-                <a class="project-link" href="">More</a>
-            </div>
-            <div class="project">
-                <img src="./asset/image/mern-stack.PNG" alt="">
-                <h2>REACT Authentication</h2>
-                <p class="project-desc">Mern Stack Authentication that uses Redux as state management. It incooperates token transfer for client and server sides, mailing service, account activation.
-                </p>
-                <a class="project-link" href="">More</a>
-            </div>
-            <div class="project">
-                <img src="./asset/image/WhatsApp Image 2021-07-13 at 9.44.49 PM.jpeg" alt="">
-                <h2>Project title</h2>
-                <p class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis maxime nobis molestiae architecto exercitationem distinctio aut magni dolorem voluptatibus animi eius quae, alias illum itaque ullam dicta temporibus voluptatem blanditiis?
-                </p>
-                <a class="project-link" href="">More</a>
-            </div>
-        </section>
-        <h1 class="skill-head">Skills</h1>
-        <section id="skills" class="skills">
-            <div class="skill-container">
-                <div class="skill-wrapper">
-                    <div class="skill-text">
-                        <span>Html</span>
-                        <span class="html-value">95%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-bar-item html-bar"></div>
-                    </div>
+        </div>
+    </section>
+    <section class="project">
+        <h1>A TOUR TO SOME OF MY PROJECTS</h1>
+        <div class="project-container">
+            <div class="single-project p-one">
+                <div class="single-project-side-shadow"><p>CHECK THIS OUT</p> </div>
+                <div class="single-project-shadow">
+                  <h2>SOCIAL MEDIA APP</h2>
+                  <a href="#"><i class="fas fa-eye"></i></a>
                 </div>
             </div>
-            <div class="skill-container">
-                <div class="skill-wrapper">
-                    <div class="skill-text">
-                        <span>JavaScript</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-bar-item js-bar"></div>
-                    </div>
+            <div class="single-project p-two">
+                <div class="single-project-side-shadow"><p>CHECK THIS OUT</p> </div>
+                <div class="single-project-shadow">
+                    <h2>SOCIAL MEDIA APP</h2>
+                    <a href="#"><i class="fas fa-eye"></i></a>
+                  </div>
+            </div>
+        </div>
+        <div class="project-container">
+            <div class="single-project p-three">
+                <div class="single-project-side-shadow"><p>CHECK THIS OUT</p> </div>
+                <div class="single-project-shadow">
+                    <h2>SOCIAL MEDIA APP</h2>
+                    <a href="#"><i class="fas fa-eye"></i></a>
+                  </div>
+            </div>
+            <div class="single-project p-four">
+                <div class="single-project-side-shadow"><p>CHECK THIS OUT</p> </div>
+                <div class="single-project-shadow">
+                    <h2>SOCIAL MEDIA APP</h2>
+                    <a href="#"><i class="fas fa-eye"></i></a>
+                  </div>
+            </div>
+        </div>
+    </section>
+    <section class="skill">
+        <h1>A FEW OF MY SKILLS ARCHIVE</h1>
+        <div class="skill-container">
+            <div class="skill-wrapper">
+                <div class="skill-text">
+                    <span>Html</span>
+                    <span class="html-value">95%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-item html-bar"></div>
                 </div>
             </div>
-            <div class="skill-container">
-                <div class="skill-wrapper">
-                    <div class="skill-text">
-                        <span>React & Redux</span>
-                        <span>84%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-bar-item react-bar"></div>
-                    </div>
+        </div>
+        <div class="skill-container">
+            <div class="skill-wrapper">
+                <div class="skill-text">
+                    <span>JavaScript</span>
+                    <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-item js-bar"></div>
                 </div>
             </div>
-            <div class="skill-container">
-                <div class="skill-wrapper">
-                    <div class="skill-text">
-                        <span>Express</span>
-                        <span>88%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-bar-item express-bar"></div>
-                    </div>
+        </div>
+        <div class="skill-container">
+            <div class="skill-wrapper">
+                <div class="skill-text">
+                    <span>React & Redux</span>
+                    <span>84%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-item react-bar"></div>
                 </div>
             </div>
-            <div class="skill-container">
-                <div class="skill-wrapper">
-                    <div class="skill-text">
-                        <span>Mongoose</span>
-                        <span></span>85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-bar-item mongoose-bar"></div>
-                    </div>
+        </div>
+        <div class="skill-container">
+            <div class="skill-wrapper">
+                <div class="skill-text">
+                    <span>Express</span>
+                    <span>88%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-item express-bar"></div>
                 </div>
             </div>
-            <div class="skill-container">
-                <div class="skill-wrapper">
-                    <div class="skill-text">
-                        <span>English Skills</span>
-                        <span></span>92%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-bar-item comm-bar"></div>
-                    </div>
+        </div>
+        <div class="skill-container">
+            <div class="skill-wrapper">
+                <div class="skill-text">
+                    <span>Mongoose</span>
+                    <span></span>85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-item mongoose-bar"></div>
                 </div>
             </div>
-        </section>
-        <h1 id="contact">Contact Me</h1>
-        <section class="section-contact">
-            <div class="contact-item">
-                <div class="contact-icon-div">
-                    <i class="fab fa-facebook"></i>
+        </div>
+        <div class="skill-container">
+            <div class="skill-wrapper">
+                <div class="skill-text">
+                    <span>People Relationship</span>
+                    <span></span>92%</span>
                 </div>
-                <div class="contact-cat">
-                    <h3 class="contact-type">
-                        <a href="https://web.facebook.com/promise.johnson.940/">Promise Johnson</a>
-                    </h3>
-                </div>
-
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon-div">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <div class="contact-cat">
-                    <h3 class="contact-type">+234 8111 582 25</h3>
-                </div>
-
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon-div">
-                    <i class="far fa-envelope"></i>
-                </div>
-                <div class="contact-cat">
-                    <h3 class="contact-type">Chiemelapromise30@gmail.com</h3>
-                </div>
-
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon-div">
-                    <i class="fab fa-linkedin"></i>
-                </div>
-                <div class="contact-cat">
-                    <h3 class="contact-type">
-                        <a href="https://www.linkedin.com/in/promise-chiemela-788887142/">LinkedIn</a>
-                    </h3>
-                </div>
-
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon-div">
-                    <i class="fab fa-twitter"></i>
-                </div>
-                <div class="contact-cat">
-                    <h3 class="contact-type">
-                        <a target="_blank" href="https://twitter.com/Promise94353263">Twitter</a>
-                    </h3>
+                <div class="skill-bar">
+                    <div class="skill-bar-item comm-bar"></div>
                 </div>
             </div>
-            <div class="contact-item">
-                <div class="contact-icon-div">
-                    <i class="fab fa-github"></i>
-                </div>
-                <div class="contact-cat">
-                    <h3 class="contact-type">
-                        <a href="https://github.com/promise-J">GitHub</a>
-                    </h3>
-                </div>
-            </div>
-        </section>
-        <h2 id="about">About Me</h2>
-        <section class="about">
-            <div class="about-img">
-                <img src="./asset/image/promise.jpg" alt="">
-            </div>
-            <div class="about-p">
-                <p>
-                    I am Promise johnson, a Nigerian, a graduate of Federal University of technology Owerri. I prefer the MERN Stack and am pretty cool on some other technologies. I am a Lover of good Music. One thing i cant take away from life is the zeal of teaching newbies
-                    Programming and of course learning and taking new Challenges.
-                </p>
-            </div>
-        </section>
-        <footer>
-            <p>Promise &copy;</p>
-        </footer>
+    </section>
+    <section class="next">
+        
+    </section>
     </main>
-    <script src="script.js "></script>
+    <div class="sidebar sidebarRight">
+        <ul class="sidebarList">
+            <li class="sidebarListItem"><i class="far fa-address-book"></i> </li>
+            <li class="sidebarListItem"><i class="fas fa-dungeon"></i> </li>
+            <li class="sidebarListItem"><i class="fas fa-tasks"></i> </li>
+            <li class="sidebarListItem"><i class="fas fa-poll"></i> </li>
+        </ul>
+    </div>
+    </div>
+    <script>
+        const items = document.querySelectorAll('.anim')
+        observer = new IntersectionObserver((entries)=>{
+            entries.forEach(entry=>{
+                if(entry.intersectionRatio > 0){
+                    console.log(entry.target)
+                    entry.target.style.animation = 'anim1 2s forward ease-out'
+                }else{
+                    entry.target.style.animation = 'none'
+                }
+            })
+        })
+
+            items.forEach(item=>{
+                observer.observe(item)
+            })
+
+    </script>
+    <script src="./asset/js/script.js "></script>
 </body>
 
 </html>
