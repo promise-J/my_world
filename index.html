@@ -28,6 +28,7 @@
     <header>
         <div class="headerLeft">
            <h1>Johnson Promise</h1>
+           <h1 class="short-head">J.P.</h1>
         </div>
         <div class="headerRight">
            <ul class="headerLinkList">
@@ -35,16 +36,20 @@
                <li class="headerLinkListItem">ABOUT</li>
                <li class="headerLinkListItem">CONTACT</li>
                <li class="headerLinkListItem">PROJECT</li>
-               <li class="headerLinkListItem">
-                <label>
-                    <input onChange={handleCheck} type="checkbox" />
-                    <span></span>
-                    <i className="indicator"></i>
-                </label>
-               </li>
+               <li class="headerLinkListItem switch"><small>Light mode</small> <i class="far fa-lightbulb"></i></li>
+               <li style="border: none;" class="headerLinkListItem menu"><i class="fas fa-bars"></i></li>
            </ul>
         </div>
     </header>
+    <div class="slide">
+        <span><i class="far fa-window-close"></i></span>
+        <ul class="slide-items">
+            <li class="slide-item">Home</li>
+            <li class="slide-item">Contact</li>
+            <li class="slide-item">About</li>
+            <li class="slide-item">Projects</li>
+        </ul>
+    </div>
     <div class="body-container">
 
     <div class="sidebar sidebarLeft">
@@ -107,25 +112,31 @@
                 </div>
             </div>
             <div class="single-project p-two">
-                <div class="single-project-side-shadow"><p>CHECK THIS OUT</p> </div>
+                <div class="single-project-side-shadow">
+                    <p>CHECK THIS OUT</p> 
+                </div>
                 <div class="single-project-shadow">
-                    <h2>SOCIAL MEDIA APP</h2>
+                    <h2>REACT GAME APP</h2>
                     <a href="#"><i class="fas fa-eye"></i></a>
                   </div>
             </div>
         </div>
         <div class="project-container">
             <div class="single-project p-three">
-                <div class="single-project-side-shadow"><p>CHECK THIS OUT</p> </div>
+                <div class="single-project-side-shadow">
+                    <p>CHECK THIS OUT</p> 
+                </div>
                 <div class="single-project-shadow">
-                    <h2>SOCIAL MEDIA APP</h2>
+                    <h2>FULLY RESPONSIVE WEBSITE</h2>
                     <a href="#"><i class="fas fa-eye"></i></a>
                   </div>
             </div>
             <div class="single-project p-four">
-                <div class="single-project-side-shadow"><p>CHECK THIS OUT</p> </div>
+                <div class="single-project-side-shadow">
+                    <p>CHECK THIS OUT</p> 
+                </div>
                 <div class="single-project-shadow">
-                    <h2>SOCIAL MEDIA APP</h2>
+                    <h2>EPIC CHAT APP</h2>
                     <a href="#"><i class="fas fa-eye"></i></a>
                   </div>
             </div>
@@ -135,7 +146,7 @@
         <h1>A FEW OF MY SKILLS ARCHIVE</h1>
         <div class="skill-container">
             <div class="skill-wrapper">
-                <div class="skill-text">
+                <div id='skill-text' class="skill-text">
                     <span>Html</span>
                     <span class="html-value">95%</span>
                 </div>
@@ -200,7 +211,16 @@
             </div>
     </section>
     <section class="next">
-        
+        <h1>Contact Me</h1>
+        <!-- <i class="far fa-moon"></i> -->
+        <!-- <i class="far fa-sun"></i> -->
+        <ul class="nextList">
+            <li><a href="#"><i class="far fa-envelope"></i> Chiemelapromise30@gmail.com</a></li>
+            <li><a target="_blank" href="https://twitter.com/Promise94353263"><i class="fab fa-twitter"></i> Tweet Promise</a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/in/promise-chiemela"><i class="fab fa-linkedin"></i> Promise@LinkedIn</a></li>
+            <li><a target="_blank" href="https://github.com/promise-J"><i class="fab fa-github"></i> promise-J</a></li>
+            <li><a target="_blank" href="https://www.facebook.com/promise.johnson.940/"><i class="fab fa-facebook"></i> Promise Johnson</a></li>
+        </ul>
     </section>
     </main>
     <div class="sidebar sidebarRight">
@@ -217,7 +237,7 @@
         observer = new IntersectionObserver((entries)=>{
             entries.forEach(entry=>{
                 if(entry.intersectionRatio > 0){
-                    console.log(entry.target)
+                    // console.log(entry.target)
                     entry.target.style.animation = 'anim1 2s forward ease-out'
                 }else{
                     entry.target.style.animation = 'none'

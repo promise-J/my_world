@@ -9,13 +9,23 @@ main{
     flex: 3;
     background-color: rgb(19, 3, 63);
     color: white;
+    transition: all .5s ease-in-out;
+}
+.dark{
+    background-color: rgb(19, 3, 63);
+    color: white;
+}
+
+.light{
+    color: rgb(19, 3, 63);
 }
 .sidebar{
-    background: rgb(248, 204, 204);
+    background: rgb(192, 192, 231);
     height: calc(100vh - 50px);
     flex: 0.09;
     position: sticky;
     top: 50px;
+    transition: all 0.6s ease-in-out;
     /* padding: 10px; */
     /* border-right: 1px solid rgb(230, 224, 224);
     border-left: 1px solid rgb(230, 224, 224); */
@@ -33,7 +43,7 @@ main{
     list-style: none;
 }
 .sidebarListItem:hover{
-    background: white;
+    opacity: 0.7;
 }
 .sidebarListItem{
     font-size: 26px;
@@ -46,7 +56,44 @@ main{
     padding: 4px 13px;
     border-radius: 10px;
 }
-
+.slide{
+    height: 100vh;
+    width: 100%;
+    background: rgb(19, 3, 63);
+    position: absolute;
+    padding: 30px;
+    z-index: 99;
+    /* display: flex; */
+    /* align-items: center; */
+    transform: translateX(-360px);
+    transition: all 0.6s ease-in-out;
+}
+.slide span{
+    color: white;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 20px;
+}
+.slide-items{
+    /* background: blueviolet; */
+    list-style: none;
+    height: 80%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    /* margin: auto; */
+}
+.slide-items .slide-item{
+    background: white;
+    margin: 10px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
 
 header{
     height: 50px;
@@ -56,6 +103,7 @@ header{
     z-index: 99;
     display: flex;
     background: white;
+    width: 100vw;
 }
 
 .headerLeft{
@@ -76,6 +124,9 @@ header{
     align-items: center;
     justify-content: space-around;
 }
+.short-head{
+    display: none;
+}
 
 .headerLinkListItem{
     font-weight: 500;
@@ -83,9 +134,30 @@ header{
     padding: 5px 10px;
     border-radius: 5px;
 }
+.headerLinkListItem.menu{
+    display: none;
+}
+.headerLinkListItem.switch{
+    /* background-color: green; */
+    height: 40px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headerLinkListItem i{
+    /* color: red; */
+    /* background-color: blue; */
+    transition: ease-in-out all 1s;
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
 .headerLinkListItem:hover{
-    background-color: rgb(189, 189, 243);
-    color: white;
+    /* background-color: rgb(189, 189, 243); */
+    /* color: white; */
+    cursor: pointer;
 }
 
 .intro-text{
@@ -121,11 +193,12 @@ header{
     padding: 20px 0;
     opacity: 0.7;
 }
-.about, .introduction, .project, .skill{
+.about, .introduction, .project, .skill, .next{
     width: 90%;
     margin: 20px auto;
     padding: 40px;
-    height: 100vh;
+    min-height: 100vh;
+    height: fit-content;
     /* background: green; */
 }
 .about-title{
@@ -282,6 +355,7 @@ header{
     height: 90%;
     color: rgb(60, 60, 243);
     top: 10%;
+    width: 90%;
 }
 
 .single-project .single-project-side-shadow p{
@@ -351,7 +425,7 @@ header{
 }
 
 .skill-bar-item {
-    background-color: rgb(243, 125, 243);
+    background-color: white;
     height: 100%;
     border-radius: 20px;
 }
@@ -449,6 +523,44 @@ header{
     /* background-color: red; */
 }
 
+.next{
+    /* background-color: red; */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.next h1{
+    font-size: 40px;
+    margin-left: 20px;
+}
+
+.next .nextList{
+    /* background-color: blue; */
+    list-style: none;
+    padding: 25px;
+}
+.next .nextList li{
+    margin: 10px;
+    /* background-color: green; */
+    padding: 10px;
+    opacity: 0.6;
+}
+
+.nextList li i{
+    /* font-size: 20px; */
+    margin-right: 20px;
+    transition: 1s all ease-in-out;
+    border-radius: 50%;
+    padding: 5px;
+}
+.nextList li:hover i{
+    transform: scale(1.7, 1.7);
+    opacity: 1;
+}
+
+
 @keyframes anim1 { 
     from {
         transform: translateY(-100px);
@@ -469,94 +581,256 @@ header{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* STYLE FOR THE SWITCH LABEL */
-label{
-    position: relative;
-    margin: 20px 20px;
-    cursor: pointer;
-}
-label input{
-    appearance: none;
-    display: none;
-}
-label span{
-    position: relative;
-    display: block;
-    width: 80px;
-    height: 40px;
-    background: #222;
-    border-radius: 40px;
-    box-shadow: inset 0 2px 15px rgba(0,0,0,0.2),
-    inset 0 2px 15px rgba(0,0,0,0.2),
-    inset 0 -1px 1px rgba(0,0,0,0.2);
-}
-label .indicator{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(to bottom, #444, #222);
-    border-radius: 50%;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.5),
-    inset 0 2px 5px rgba(225,225,225,0.1);
-    transition: 0.5s;
-    transform: scale(0.9);
-}
-label input:checked ~ .indicator{
-    left: 40px;
+/* MEDIA SCREEN AND RESPONSIVENESS */
+/* @media screen (max-width: 1080px) and (min-width: 480px) {
+    body{
+        display: none
+    }   
+} */
+  
+/* first step - between 940 and 1000px*/
+@media (min-width: 940px) and (max-width: 1000px) {
+    /* body {
+        display: none;
+    } */
+    .sidebar{
+        display: none;
+    }
+    
+    .headerLinkListItem{
+        font-size: 13px;
+    }
+    .headerRight{
+        flex: 1.5;
+    }
 }
 
-label .indicator::before{
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 5px;
-    height: 5px;
-    background: var(--black);
-    border-radius: 50%;
-    box-shadow: 0 0 2px var(--black),
-    0 0 5px var(--black),
-    0 0 10px var(--black),
-    0 0 15px var(--black),
-    0 0 25px var(--black),
-    0 0 30px var(--black),
-    0 0 40px var(--black);
-}
-label input:checked ~ .indicator::before{
-    background: var(--white);
-    border-radius: 50%;
-    box-shadow: 0 0 2px var(--white),
-    0 0 5px var(--white),
-    0 0 10px var(--white),
-    0 0 15px var(--white),
-    0 0 25px var(--white),
-    0 0 30px var(--white),
-    0 0 40px var(--white);
+/* second step - between 840px and 939px */
+@media (min-width: 840px) and (max-width: 939px){
+    .intro-text{
+        line-height: 2;
+    }
+    .intro-text h1{
+        font-size: 50px;
+        margin: 10px 0;
+        letter-spacing: 2px;
+    }
+    .intro-text h2{
+        margin: 10px 0;
+        font-size: 45px;
+    }
+    .intro-text .intro-port{
+        font-size: 20px;
+        padding: 0px;
+        margin: 0;
+        width: 100%;
+    }
 }
 
+@media screen and (max-width: 839px){
+    .project-container{
+        flex-direction: column;
+    }
+    .about-container{
+        flex-direction: column-reverse;
+    }
+    .about-img-container{
+        width: 80%;
+        height: fit-content;
+        margin: auto;
+        /* background: red; */
+    }
+    .about-img-container .about-img{
+        height: 50vh;
+    }
+}
+
+/* third step - betweeen 740px and 839px */
+@media (min-width: 740px) and (max-width: 839px){
+    .intro-text{
+        line-height: 2;
+    }
+    .intro-text h1{
+        font-size: 45px;
+        margin: 10px 0;
+        letter-spacing: 2px;
+    }
+    .intro-text h2{
+        margin: 10px 0;
+        font-size: 40px;
+    }
+    .intro-text .intro-port{
+        font-size: 20px;
+        padding: 0px;
+        margin: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .intro-text{
+        line-height: 2;
+    }
+    .intro-text h1{
+        font-size: 45px;
+        margin: 10px 0;
+        letter-spacing: 2px;
+    }
+    .intro-text h2{
+        margin: 10px 0;
+        font-size: 40px;
+    }
+    .intro-text .intro-port{
+        font-size: 20px;
+        padding: 0px;
+        margin: 0;
+        width: 100%;
+    }
+    .single-project .single-project-shadow{
+        opacity: 0.9;
+        height: 90%;
+        color: rgb(60, 60, 243);
+        top: 10%;
+        width: 90%;
+    }
+    .single-project-shadow h2{
+        font-size: 18px;
+    }
+    .single-project .single-project-side-shadow{
+        width: 100%;
+        opacity: 1;
+    }
+    .single-project .single-project-side-shadow p{
+        transform: translateX(70px);
+        opacity: 1;
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .project h1{
+        font-size: 25px;
+    }
+    .headerLeft h1{
+        display: none;
+    }
+    .headerLeft{
+        flex: 0.3;
+        /* background: red; */
+    }
+    .headerRight{
+        flex: 4;
+        /* background: blue; */
+    }
+    .headerLinkListItem:nth-child(1)
+    , .headerLinkListItem:nth-child(2)
+    , .headerLinkListItem:nth-child(3)
+    , .headerLinkListItem:nth-child(4){
+        /* color: red; */
+        font-size: 10px;
+    }
+    body .short-head{
+        display: block;
+        font-size: 16px;
+    }
+    
+}
+@media screen and (max-width: 540px) {
+    .headerRight{
+        padding-right: 2rem;
+    }
+    .headerLinkListItem:nth-child(1)
+    , .headerLinkListItem:nth-child(2)
+    , .headerLinkListItem:nth-child(3)
+    , .headerLinkListItem:nth-child(4){
+        /* color: red; */
+        display: none;
+    }
+    .headerLinkListItem.menu{
+        display: block;
+    }
+    .intro-text h1{
+        font-size: 28px;
+        letter-spacing: 5px;
+        /* color: red; */
+    }
+    .intro-text h2{
+        font-size: 20px;
+        letter-spacing: 3px;
+    }
+    .intro-text .intro-port{
+        font-size: 12px;
+        letter-spacing: 4px;
+    }
+    .about-title{
+        font-size: 24px;
+        text-align: center;
+        border: none;
+    }
+    .about-text p{
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+    .about-img-container{
+        width: 100%;
+        padding: 0px;
+        /* background: red; */
+    }
+    .nextList li{
+        font-size: 15px;
+        margin: 0;
+    }
+    .nextList li i{
+        margin: 0;
+    }
+    .project h1{
+        font-size: 18px;
+        border: none;
+        /* color: red; */
+    }
+}
+/* fourth step - between 640px and 739px*/
+@media (min-width: 540px) and (max-width: 639px){
+   
+    .headerRight{
+        padding-right: 4rem;
+    }
+    /* .headerLinkListItem:nth-child(5){ */
+        /* color: red; */
+        /* align-self: flex-end; */
+        /* justify-self: end; */
+        /* margin-left: auto; */
+    
+}
 
 
+/* below 1000px */
+@media screen and (max-width: 1000px) {
+    .sidebar{
+        display: none;
+    }
+}
+
+/* below 900px */
+@media screen and (max-width: 900px) {
+    .about, .introduction, .project, .skill, .next{
+        width: 90%;
+        margin: 10px auto;
+        padding: 10px;
+        /* min-height: 100vh; */
+        height: fit-content;
+        /* background: green; */
+    }
+    .intro-text{
+        /* background: red; */
+        margin: 10px;
+        padding: 10px;
+    }
+    .headerLinkListItem{
+        font-size: 13px;
+    }
+    .headerRight{
+        flex: 1.5;
+    }
+}
 
 
 
