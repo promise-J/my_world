@@ -59,6 +59,7 @@ main{
 .slide{
     height: 100vh;
     width: 100%;
+    top: 0;
     background: rgb(19, 3, 63);
     position: absolute;
     padding: 30px;

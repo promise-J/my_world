@@ -233,22 +233,89 @@
     </div>
     </div>
     <script>
-        const items = document.querySelectorAll('.anim')
-        observer = new IntersectionObserver((entries)=>{
-            entries.forEach(entry=>{
-                if(entry.intersectionRatio > 0){
-                    // console.log(entry.target)
-                    entry.target.style.animation = 'anim1 2s forward ease-out'
-                }else{
-                    entry.target.style.animation = 'none'
-                }
-            })
+        const switchOn = document.querySelector('.switch')
+const main = document.querySelector('main')
+const shadowP = document.querySelector('.single-project-side-shadow')
+const singleProject = document.querySelectorAll('.single-project')
+const sidebar = document.querySelectorAll('.sidebar')
+const sidebarListItem = document.querySelectorAll('.sidebarListItem')
+const introP = document.querySelector('.intro-text p')
+const skillText = document.querySelectorAll('.skill-text span')
+const skillbar = document.querySelectorAll('.skill-bar')
+const skillbaritem = document.querySelectorAll('.skill-bar-item')
+const cancelMenu = document.querySelector('.slide span')
+const openMenu = document.querySelector('.menu')
+const slideContainer = document.querySelector('.slide')
+
+
+let isMenuOpen = false
+let on = false
+function changeTheme(){
+        let sun = document.createElement('i')
+        sun.className = 'far fa-sun'
+        let moon = document.createElement('i')
+        moon.className = 'far fa-moon'
+
+        switchOn.addEventListener('click', ()=> {
+            if(!on){
+                on = !on
+                switchOn.innerHTML = "Light mode<i class='far fa-moon dark'></i>"
+                main.style.backgroundColor = "rgb(218, 213, 213)"
+                main.style.color = "rgb(19, 3, 63)"
+                shadowP.style.color = 'white'
+                singleProject.forEach(s=>{
+                    s.style.opacity = '1'
+                })
+                introP.style.color = 'black'
+                skillText.forEach(skill=>{
+                    skill.style.color = 'black'
+                })
+                skillbaritem.forEach(skill=>{
+                    skill.style.backgroundColor = 'rgb(19, 3, 63)'
+                })
+                sidebar.forEach(side=>{
+                    side.style.backgroundColor = 'rgb(19, 3, 63)'
+                    side.style.color = 'white'
+                })
+                skillbar.forEach(bar=>{
+                    bar.style.border = 'black 1px solid'
+                })
+            }else{          
+                on = !on
+                switchOn.innerHTML = "Dark mode <i class='far fa-lightbulb light'></i>"
+                main.style.backgroundColor = "rgb(19, 3, 63)"
+                main.style.color = "white"
+                introP.style.color = 'rgb(198, 178, 252)'
+                skillText.forEach(skill=>{
+                    skill.style.color = 'white'
+                })
+                singleProject.forEach(s=>{
+                    s.style.opacity = '0.8'
+                })
+                skillbar.forEach(s=>{
+                    s.style.border = 'white 1px solid'
+                })
+                skillbaritem.forEach(s=>{
+                    s.style.backgroundColor = 'white'
+                })
+                shadowP.style.color = 'rgb(60, 60, 243)'
+                sidebar.forEach(side=>{
+                    side.style.backgroundColor = 'rgb(192, 192, 231)'
+                    side.style.color = 'black'
+                })
+            }
         })
+    }
 
-            items.forEach(item=>{
-                observer.observe(item)
-            })
+    changeTheme()
 
+    openMenu.addEventListener('click', ()=>{
+        slideContainer.style.transform = 'translateX(0px)'
+    })
+
+    cancelMenu.addEventListener('click', ()=>{
+        slideContainer.style.transform = 'translateX(-360px)'
+    })
     </script>
     <script src="./asset/js/script.js "></script>
 </body>
