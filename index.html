@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="asset/style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
+    <!-- <link rel="stylesheet" href="bower_components/aos/dist/aos.css" /> -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100;0,200;1,300&family=Urbanist:ital,wght@0,100;0,200;0,400;1,100;1,200;1,400&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
@@ -44,10 +45,21 @@
     <div class="slide">
         <span><i class="far fa-window-close"></i></span>
         <ul class="slide-items">
-            <li class="slide-item">Home</li>
-            <li class="slide-item">Contact</li>
-            <li class="slide-item">About</li>
-            <li class="slide-item">Projects</li>
+            <a href="#home">
+                <li class="slide-item">Home</li>
+            </a>
+            <a href="#contact">
+                <li class="slide-item">Contact</li>
+            </a>
+            <a href="#about">
+                <li class="slide-item">About</li>
+            </a>
+            <a href="#projects">
+                <li class="slide-item">Projects</li>
+            </a>
+            <a href="#skills">
+                <li class="slide-item">Skills</li>
+            </a>
         </ul>
     </div>
     <div class="body-container">
@@ -61,7 +73,7 @@
         </ul>
     </div>
     <main>
-    <section class="introduction anim">
+    <section id="home" class="introduction anim">
         <div class="intro-text">
            <p>Hi, My name is</p>
            <h1>PROMISE JOHNSON</h1>
@@ -71,7 +83,7 @@
            </p>
         </div>
     </section>
-    <section class="about anim">
+    <section data-aos="flip-up" id="about" class="about anim">
         <h1 class="about-title anim">ABOUT ME</h1>
         <div class="about-container">
             <div class="about-text">
@@ -101,14 +113,14 @@
             </div>
         </div>
     </section>
-    <section class="project">
+    <section id="projects" class="project">
         <h1>A TOUR TO SOME OF MY PROJECTS</h1>
         <div class="project-container">
             <div class="single-project p-one">
                 <div class="single-project-side-shadow"><p>CHECK THIS OUT</p> </div>
                 <div class="single-project-shadow">
                   <h2>SOCIAL MEDIA APP</h2>
-                  <a href="#"><i class="fas fa-eye"></i></a>
+                  <a href="https://promzy-social-app.herokuapp.com/"><i class="fas fa-eye"></i></a>
                 </div>
             </div>
             <div class="single-project p-two">
@@ -117,7 +129,7 @@
                 </div>
                 <div class="single-project-shadow">
                     <h2>REACT GAME APP</h2>
-                    <a href="#"><i class="fas fa-eye"></i></a>
+                    <a href="https://solo-game.herokuapp.com/"><i class="fas fa-eye"></i></a>
                   </div>
             </div>
         </div>
@@ -128,7 +140,7 @@
                 </div>
                 <div class="single-project-shadow">
                     <h2>FULLY RESPONSIVE WEBSITE</h2>
-                    <a href="#"><i class="fas fa-eye"></i></a>
+                    <a href="https://raw.githack.com/promise-J/responsive-web-design/responsive-web/index.html"><i class="fas fa-eye"></i></a>
                   </div>
             </div>
             <div class="single-project p-four">
@@ -142,7 +154,7 @@
             </div>
         </div>
     </section>
-    <section class="skill">
+    <section id="skills" class="skill">
         <h1>A FEW OF MY SKILLS ARCHIVE</h1>
         <div class="skill-container">
             <div class="skill-wrapper">
@@ -210,7 +222,7 @@
                 </div>
             </div>
     </section>
-    <section class="next">
+    <section id="contact" class="next">
         <h1>Contact Me</h1>
         <!-- <i class="far fa-moon"></i> -->
         <!-- <i class="far fa-sun"></i> -->
@@ -232,20 +244,24 @@
         </ul>
     </div>
     </div>
+    <!-- <script src="bower_components/aos/dist/aos.js"></script>  -->
     <script>
+            // AOS.init();
         const switchOn = document.querySelector('.switch')
-const main = document.querySelector('main')
-const shadowP = document.querySelector('.single-project-side-shadow')
-const singleProject = document.querySelectorAll('.single-project')
-const sidebar = document.querySelectorAll('.sidebar')
-const sidebarListItem = document.querySelectorAll('.sidebarListItem')
-const introP = document.querySelector('.intro-text p')
-const skillText = document.querySelectorAll('.skill-text span')
-const skillbar = document.querySelectorAll('.skill-bar')
-const skillbaritem = document.querySelectorAll('.skill-bar-item')
-const cancelMenu = document.querySelector('.slide span')
-const openMenu = document.querySelector('.menu')
-const slideContainer = document.querySelector('.slide')
+        const main = document.querySelector('main')
+        const shadowP = document.querySelector('.single-project-side-shadow')
+        const singleProject = document.querySelectorAll('.single-project')
+        const sidebar = document.querySelectorAll('.sidebar')
+        const sidebarListItem = document.querySelectorAll('.sidebarListItem')
+        const introP = document.querySelector('.intro-text p')
+        const skillText = document.querySelectorAll('.skill-text span')
+        const skillbar = document.querySelectorAll('.skill-bar')
+        const skillbaritem = document.querySelectorAll('.skill-bar-item')
+        const cancelMenu = document.querySelector('.slide span')
+        const openMenu = document.querySelector('.headerLinkListItem.menu')
+        const slideContainer = document.querySelector('.slide')
+        const slideItems = document.querySelectorAll('.slide-item')
+
 
 
 let isMenuOpen = false
@@ -314,10 +330,16 @@ function changeTheme(){
     })
 
     cancelMenu.addEventListener('click', ()=>{
-        slideContainer.style.transform = 'translateX(-360px)'
+        slideContainer.style.transform = 'translateX(-100vw)'
+    })
+
+    slideItems.forEach(item=>{
+        item.addEventListener('click', ()=> {
+        slideContainer.style.transform = 'translateX(-100vw)'
+        })
     })
     </script>
-    <script src="./asset/js/script.js "></script>
+    <!-- <script src="./asset/js/script.js "></script> -->
 </body>
 
 </html>
