@@ -28,15 +28,23 @@
 <body>
     <header>
         <div class="headerLeft">
-           <h1>Johnson Promise</h1>
+           <h1>My Portfolio</h1>
            <h1 class="short-head">J.P.</h1>
         </div>
         <div class="headerRight">
            <ul class="headerLinkList">
-               <li class="headerLinkListItem">HOME</li>
-               <li class="headerLinkListItem">ABOUT</li>
-               <li class="headerLinkListItem">CONTACT</li>
-               <li class="headerLinkListItem">PROJECT</li>
+               <a href="#">
+                   <li class="headerLinkListItem">HOME</li>
+               </a>
+               <a href="#about">
+                   <li class="headerLinkListItem">ABOUT</li>
+               </a>
+               <a href="#contact">
+                   <li class="headerLinkListItem">CONTACT</li>
+               </a>
+               <a href="#projects">
+                   <li class="headerLinkListItem">PROJECT</li>
+               </a>
                <li class="headerLinkListItem switch"><small>Light mode</small> <i class="far fa-lightbulb"></i></li>
                <li style="border: none;" class="headerLinkListItem menu"><i class="fas fa-bars"></i></li>
            </ul>
@@ -78,12 +86,12 @@
            <p>Hi, My name is</p>
            <h1>PROMISE JOHNSON</h1>
            <h2>I BUILD AND DESIGN WEB APPLICATIONS</h2>
-           <p class="intro-port">I am a Software Engineer dedicated to building 
-               and designing (seldom times) your web applications. Give me your ideas and i bring it to life.
+           <p class="intro-port">I am a Software Developer dedicated to building 
+               and designing your web applications. Give me your ideas and i bring it to life.
            </p>
         </div>
     </section>
-    <section data-aos="flip-up" id="about" class="about anim">
+    <section id="about" data-aos="flip-up" class="about anim">
         <h1 class="about-title anim">ABOUT ME</h1>
         <div class="about-container">
             <div class="about-text">
@@ -114,7 +122,7 @@
         </div>
     </section>
     <section id="projects" class="project">
-        <h1>A TOUR TO SOME OF MY PROJECTS</h1>
+        <h1>SOME OF MY PROJECTS</h1>
         <div class="project-container">
             <div class="single-project p-one">
                 <div class="single-project-side-shadow"><p>CHECK THIS OUT</p> </div>
@@ -275,7 +283,7 @@ function changeTheme(){
         switchOn.addEventListener('click', ()=> {
             if(!on){
                 on = !on
-                switchOn.innerHTML = "Light mode<i class='far fa-moon dark'></i>"
+                switchOn.innerHTML = "Dark mode<i class='far fa-moon dark'></i>"
                 main.style.backgroundColor = "rgb(218, 213, 213)"
                 main.style.color = "rgb(19, 3, 63)"
                 shadowP.style.color = 'white'
@@ -298,7 +306,7 @@ function changeTheme(){
                 })
             }else{          
                 on = !on
-                switchOn.innerHTML = "Dark mode <i class='far fa-lightbulb light'></i>"
+                switchOn.innerHTML = "Light mode <i class='far fa-lightbulb light'></i>"
                 main.style.backgroundColor = "rgb(19, 3, 63)"
                 main.style.color = "white"
                 introP.style.color = 'rgb(198, 178, 252)'
