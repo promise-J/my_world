@@ -107,19 +107,28 @@
                     time with Solution Academy as a <span>mentor</span> and Head Of Department (HOD).
                     Having organized a handful of <span>Boot-camps</span> programmes, I earned the Best staff of the year. (2018, 2019, 2020)
                 </p>
-                <p>A few of my most many technologies</p>
-                <ul class="about-list">
-                    <li class="about-list-item"><i class="fab fa-react"></i> React</li>
-                    <li class="about-list-item"><i class="fab fa-node"></i> Node.js</li>
-                    <li class="about-list-item"><i class="fab fa-git-square"></i> Git</li>
-                    <li class="about-list-item"><i class="fas fa-database"></i> MongoDB</li>
-                    <li class="about-list-item"><i class="fab fa-python"></i> Django</li>
-                </ul>
+                
             </div>
             <div class="about-img-container">
                 <img src="./asset/image/jpDarkFace.jpg" alt="" class="about-img">
             </div>
         </div>
+    </section>
+    <section class="skill-archive-container">
+            <div class="skill-archive">
+                <p>A few of my most many technologies</p>
+                <ul class="about-list">
+                    <li class="about-list-item"><i class="fab fa-react"></i> HTML5</li>
+                    <li class="about-list-item"><i class="fab fa-react"></i> CSS</li>
+                    <li class="about-list-item"><i class="fab fa-react"></i> React & Redux</li>
+                    <li class="about-list-item"><i class="fab fa-js-square"></i> Java Script</li>
+                    <li class="about-list-item"><i class="fab fa-node"></i> Node.js</li>
+                    <li class="about-list-item"><i class="fab fa-git-square"></i> Git</li>
+                    <li class="about-list-item"><i class="fas fa-database"></i> MongoDB</li>
+                    <li class="about-list-item"><i class="fa fa-commenting-o"></i> Web Socket</li>
+                    <li class="about-list-item"><i class="fa fa-commenting-o"></i> Express</li>
+                </ul>
+            </div>
     </section>
     <section id="projects" class="project">
         <h1>SOME OF MY PROJECTS</h1>
@@ -162,74 +171,6 @@
             </div>
         </div>
     </section>
-    <section id="skills" class="skill">
-        <h1>A FEW OF MY SKILLS ARCHIVE</h1>
-        <div class="skill-container">
-            <div class="skill-wrapper">
-                <div id='skill-text' class="skill-text">
-                    <span>Html</span>
-                    <span class="html-value">95%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-bar-item html-bar"></div>
-                </div>
-            </div>
-        </div>
-        <div class="skill-container">
-            <div class="skill-wrapper">
-                <div class="skill-text">
-                    <span>JavaScript</span>
-                    <span>90%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-bar-item js-bar"></div>
-                </div>
-            </div>
-        </div>
-        <div class="skill-container">
-            <div class="skill-wrapper">
-                <div class="skill-text">
-                    <span>React & Redux</span>
-                    <span>84%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-bar-item react-bar"></div>
-                </div>
-            </div>
-        </div>
-        <div class="skill-container">
-            <div class="skill-wrapper">
-                <div class="skill-text">
-                    <span>Express</span>
-                    <span>88%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-bar-item express-bar"></div>
-                </div>
-            </div>
-        </div>
-        <div class="skill-container">
-            <div class="skill-wrapper">
-                <div class="skill-text">
-                    <span>Mongoose</span>
-                    <span></span>85%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-bar-item mongoose-bar"></div>
-                </div>
-            </div>
-        </div>
-        <div class="skill-container">
-            <div class="skill-wrapper">
-                <div class="skill-text">
-                    <span>People Relationship</span>
-                    <span></span>92%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-bar-item comm-bar"></div>
-                </div>
-            </div>
-    </section>
     <section id="contact" class="next">
         <h1>Contact Me</h1>
         <!-- <i class="far fa-moon"></i> -->
@@ -262,9 +203,6 @@
         const sidebar = document.querySelectorAll('.sidebar')
         const sidebarListItem = document.querySelectorAll('.sidebarListItem')
         const introP = document.querySelector('.intro-text p')
-        const skillText = document.querySelectorAll('.skill-text span')
-        const skillbar = document.querySelectorAll('.skill-bar')
-        const skillbaritem = document.querySelectorAll('.skill-bar-item')
         const cancelMenu = document.querySelector('.slide span')
         const openMenu = document.querySelector('.headerLinkListItem.menu')
         const slideContainer = document.querySelector('.slide')
@@ -291,37 +229,22 @@ function changeTheme(){
                     s.style.opacity = '1'
                 })
                 introP.style.color = 'black'
-                skillText.forEach(skill=>{
-                    skill.style.color = 'black'
-                })
-                skillbaritem.forEach(skill=>{
-                    skill.style.backgroundColor = 'rgb(19, 3, 63)'
-                })
                 sidebar.forEach(side=>{
                     side.style.backgroundColor = 'rgb(19, 3, 63)'
                     side.style.color = 'white'
                 })
-                skillbar.forEach(bar=>{
-                    bar.style.border = 'black 1px solid'
-                })
+               
             }else{          
                 on = !on
                 switchOn.innerHTML = "Light mode <i class='far fa-lightbulb light'></i>"
                 main.style.backgroundColor = "rgb(19, 3, 63)"
                 main.style.color = "white"
                 introP.style.color = 'rgb(198, 178, 252)'
-                skillText.forEach(skill=>{
-                    skill.style.color = 'white'
-                })
+             
                 singleProject.forEach(s=>{
                     s.style.opacity = '0.8'
                 })
-                skillbar.forEach(s=>{
-                    s.style.border = 'white 1px solid'
-                })
-                skillbaritem.forEach(s=>{
-                    s.style.backgroundColor = 'white'
-                })
+              
                 shadowP.style.color = 'rgb(60, 60, 243)'
                 sidebar.forEach(side=>{
                     side.style.backgroundColor = 'rgb(192, 192, 231)'
