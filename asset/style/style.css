@@ -126,6 +126,11 @@ header{
     font-style: italic;
     letter-spacing: 3px;
     opacity: .5;
+    transition: all 1s;
+    cursor: pointer;
+}
+.headerLeft h1:hover{
+    font-weight: 600;
 }
 
 .headerRight{
@@ -287,14 +292,11 @@ header{
     align-items: center;
     justify-content: space-around;
     transition: all 1s ease-in;
-    opacity: 0.2;
+    opacity: 1;
+    cursor: pointer;
 }
 .about-list-item:hover .fab, .about-list-item:hover .fas{
     transform: scale(1.9, 1.9);
-}
-.about-list-item:hover{
-    /* background-color: ; */
-    opacity: 1;
 }
 
 .about-img-container{
