@@ -151,12 +151,32 @@ header {
   display: none;
 }
 
-.headerLinkListItem {
+.headerLinkListItem.underline{
+  border-bottom: 1px solid purple;
+  border-top: 1px solid purple;
+  background-color: rgb(245, 222, 245);
+}
+.headerLinkListItem.underline:hover{
+  background-color: transparent;
+  transform: rotate(15deg);
+}
+
+.headerLinkListItem{
   font-weight: 500;
   transition: all ease 0.3s;
   padding: 5px 10px;
   border-radius: 5px;
+  /* text-decoration: underline; */
 }
+
+.headerLinkListItem::after{
+  content: '';
+  background-color: purple;
+  height: 7px;
+  width: 100px;
+  top: 0;
+}
+
 .headerLinkListItem.menu {
   display: none;
 }
@@ -291,6 +311,7 @@ header {
   transition: all 0.9s ease;
 }
 .about-list-item {
+  position: relative;
   width: 30%;
   /* background: red; */
   margin: 5px 5px;
@@ -300,36 +321,96 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   transition: all 1s ease-in;
   opacity: 1;
   cursor: pointer;
+  animation: skillBlink 2s infinite;
+  /* background-color: aqua; */
 }
+
+.about-list-item::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 1px;
+  width: 0%;
+  background-color: aqua;
+  transition: all 1s ease-in;
+}
+.about-list-item::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  width: 0%;
+  background-color: aqua;
+  transition: all 1s ease-in;
+}
+.about-list-item:hover::after{
+  width: 30%;
+  /* transform: rotate(360deg); */
+  top: 54%;
+}
+.about-list-item:hover::before{
+  bottom: 40%;
+  /* transform: rotate(-360deg); */
+  width: 30%;
+}
+
+.about-list-item span::after{
+  content: '';
+  position: absolute;
+  height: 22%;
+  width: 2px;
+  margin-left: 5px;
+  bottom: 10%;
+}
+.about-list-item:hover span::after{
+  background-color: yellow;
+  animation: skillType 1.4s infinite;
+}
+
+.about-list-item span{
+  color: yellow;
+  letter-spacing: 1.5px;
+}
+
+
 .about-list-item:hover .fab,
 .about-list-item:hover .fas {
   transform: scale(1.9, 1.9);
 }
 
-.about-img-container {
-  /* background: rgb(116, 235, 219); */
-  /* padding: 40px; */
-  flex: 1;
-  /* background: red; */
-}
-.about-img-container .about-img:hover {
+/* 
+.about-list-item::after:hover{
   background-color: white;
+  content: '';
+  height: 100px;
+  width: 100px;
+  border-radius: 30px;
 }
+.about-list-item::before:hover{
+  background-color: white;
+  content: '';
+  height: 100px;
+  width: 100px;
+} */
+
+.about-img-container {
+  flex: 1;
+  background-color: rgb(19, 3, 63);
+  padding: 10px;
+}
+
 .about-img-container .about-img {
-  width: 100%;
-  height: 60%;
+  width: 80%;
+  height: 80%;
   border-radius: 10px;
-  object-fit: cover;
-  background-color: rgb(176, 176, 231);
-  padding: 1px;
+  object-fit: contain;
+  background-color: transparent;
   transition: all 0.4s ease-in-out;
   animation: animateImg infinite 5s;
-  /* margin: auto; */
-  /* margin-left: 20px; */
 }
 
 .skill-archive-container {
@@ -468,10 +549,10 @@ header {
 
 @keyframes animateImg {
   0% {
-    transform: translateY(50px);
+    transform: translateY(30px) scale(1.1);
   }
   100% {
-    transform: translateY(0px);
+    transform: translateY(0px) scale(1.1);
   }
 }
 
@@ -578,6 +659,41 @@ header {
   }
 }
 
+@keyframes skillBlink{
+  0%{
+    background-color: transparent;
+  }50%{
+   background-color: rgb(13, 1, 48);
+  }100%{
+    background-color: transparent;
+  }
+}
+@keyframes skillType{
+  0%{
+    opacity: 0.2;
+    height: 5%;
+    width: 4px;
+  }50%{
+    opacity: 1;
+    width: 15px;
+    height: 22%;
+  }100%{
+    width: 4px;
+    height: 5%;
+    opacity: 0.2;
+  }
+}
+
+@keyframes skillSwipe{
+  0%{
+    transform: translateX(0%);
+  }50%{
+    transform: translateX(300px);
+  }100%{
+    transform: translateX(0%);
+  }
+}
+
 @keyframes animateSpan {
   0% {
     color: rgb(238, 178, 178);
@@ -656,13 +772,15 @@ header {
     flex-direction: column-reverse;
   }
   .about-img-container {
-    width: 80%;
+    width: 50vh;
     height: fit-content;
     margin: auto;
     /* background: red; */
   }
   .about-img-container .about-img {
-    height: 50vh;
+    height: 20%;
+    margin: 10px 20px;
+    animation: none;
   }
 }
 
