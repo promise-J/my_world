@@ -214,6 +214,24 @@ header {
   font-weight: 600;
   font-size: 60px;
   margin: 30px 0;
+  position: relative;
+  /* background-color: aqua; */
+  width: fit-content;
+  padding: 0 15px;
+  cursor: pointer;
+}
+.intro-text h1::before{
+  transition: all 1s ease-in;
+  background-color: yellow;
+  height: 100%;
+  width: 3px;
+  position: absolute;
+  left: -10px;
+  opacity: .5;
+  content: '';
+}
+.intro-text h1:hover:before{
+  width: 100%;
 }
 .intro-text h2 {
   font-size: 55px;
@@ -221,6 +239,23 @@ header {
   margin: 30px 0;
   opacity: 0.5;
   animation: animateh2 infinite ease-in-out 5s;
+  position: relative;
+  cursor: pointer;
+}
+.intro-text h2::before{
+  transition: all 1s ease-in;
+  content: '';
+  background-color: yellow;
+  height: 2%;
+  width: 100%;
+  position: absolute;
+  left: -10px;
+  /* opacity: .1; */
+  z-index: -3;
+}
+.intro-text h2:hover::before{
+  height: 100%;
+  opacity: .2;
 }
 
 .intro-text p:nth-child(1) {
@@ -251,13 +286,28 @@ header {
   /* background: green; */
 }
 .about-title {
-  font-size: 40px;
-  margin-left: 30px;
+  /* margin-left: 30px; */
   font-weight: 600;
-  border-bottom: 1px solid rgb(248, 204, 204);
+  /* border-bottom: 1px solid rgb(248, 204, 204); */
   padding-bottom: 10px;
+  font-size: 30px;
+  /* text-align: center; */
+  margin-bottom: 5px;
+  position: relative;
+  /* border: none; */
 }
-
+.about-title::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 30px;
+  background-color: yellow;
+  transition: all 1s ease-in;
+}
+.about-title:hover::before{
+  width: 50%;
+}
 .about-container {
   /* background-color: red; */
   display: flex;
@@ -358,15 +408,28 @@ header {
   width: 30%;
 }
 
+.about-list-item span::before{
+  content: '';
+  position: absolute;
+  height: 22%;
+  width: 2px;
+  margin-left: -20px;
+  top: 10%;
+}
+
 .about-list-item span::after{
   content: '';
   position: absolute;
   height: 22%;
   width: 2px;
-  margin-left: 5px;
+  margin-left: 10px;
   bottom: 10%;
 }
 .about-list-item:hover span::after{
+  background-color: yellow;
+  animation: skillType 1.4s infinite;
+}
+.about-list-item:hover span::before{
   background-color: yellow;
   animation: skillType 1.4s infinite;
 }
@@ -433,13 +496,45 @@ header {
 .skill-archive p {
   text-align: center;
   font-size: 35px;
+  font-weight: 600;
+  /* background-color: blue; */
+  position: relative;
+}
+.skill-archive p::before{
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100px;
+  /* margin-left: 10px; */
+  bottom: 0px;
+  background-color: yellow;
+  transition: width 1s ease-in;
+}
+.skill-archive p:hover::before{
+  width: 55%;
 }
 .project h1 {
   font-size: 45px;
-  border-bottom: 1px solid gray;
+  /* border-bottom: 1px solid gray; */
   padding: 10px 0;
   margin: 0 0 10px 0;
   text-align: center;
+  position: relative;
+  width: fit-content;
+  padding: 0 15px;
+  cursor: pointer;
+}
+.project h1::before{
+  content: '';
+  background-color: yellow;
+  height: 3px;
+  width: 60px;
+  position: absolute;
+  bottom: 0;
+  transition: 1s all easin;
+}
+.project h1:hover::before{
+  width: 100%;
 }
 .project {
   /* background-color: green; */
@@ -547,6 +642,130 @@ header {
   transform: scale(2, 1.5);
 }
 
+.next {
+  /* background-color: red; */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.next h1 {
+  font-size: 40px;
+  margin-left: 20px;
+  position: relative;
+  /* background-color: blue; */
+  width: fit-content;
+  /* flex: .3; */
+  padding: 0 16px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+.next h1::before{
+  position: absolute;
+  content: '';
+  height: 3px;
+  width: 30px;
+  background-color: yellow;
+  /* left: -16px; */
+  bottom: 0;
+  transition: 1s all ease-in;
+}
+.next h1:hover::before{
+  width: 100%;
+}
+
+.next .nextList{
+  /* background-color: green; */
+  flex: 1;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  padding: 10px;
+  flex-wrap: wrap;
+}
+.next .nextList li{
+  width: 40%;
+  height: 200px;
+  margin: 10px;
+  transition: all ease-in 1s;
+  border: 1px solid rgb(32, 4, 32);
+  box-shadow: 2px 2px 10px 3px rgb(32, 4, 32);
+  display: flex;
+  flex-direction: column-reverse;
+  cursor: pointer;
+}
+
+.next .nextList li .nextListRight{
+  /* background-color: black; */
+  padding: 5px;
+  flex: 1;
+  position: relative;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: white 1px solid;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+.next .nextList li .nextListRight span{
+  color: white;
+  color: black;
+  font-weight: 600;
+  background-color: white;
+  padding: 5px;
+}
+
+.next .nextList li .nextListLeft{
+  /* background-color: yellow; */
+  padding: 5px;
+  color: white;
+  color: black;
+  flex: 1;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.next .nextList li .nextListLeft a{
+  /* background-color: white; */
+  /* padding: 5px; */
+  font-weight: 600;
+  font-size: 40px;
+  border-radius: 50%;
+  color: white;
+}
+
+.next .nextList li .nextListLeft a i{
+  box-shadow: 2px 3px 4px 10px white, 2px 3px 4px 8px rgb(46, 2, 46);
+  border-radius: 50%;
+}
+
+
+/* .next .nextList {
+  list-style: none;
+  padding: 25px;
+}
+.next .nextList li {
+  margin: 10px;
+  padding: 10px;
+  opacity: 0.6;
+}
+
+.nextList li i{
+  margin-right: 20px;
+  transition: 1s all ease-in-out;
+  border-radius: 50%;
+  padding: 5px;
+}
+.nextList li:hover i {
+  transform: scale(1.7, 1.7);
+  opacity: 1;
+} */
+
+
 @keyframes animateImg {
   0% {
     transform: translateY(30px) scale(1.1);
@@ -610,42 +829,7 @@ header {
   }
 }
 
-.next {
-  /* background-color: red; */
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.next h1 {
-  font-size: 40px;
-  margin-left: 20px;
-}
 
-.next .nextList {
-  /* background-color: blue; */
-  list-style: none;
-  padding: 25px;
-}
-.next .nextList li {
-  margin: 10px;
-  /* background-color: green; */
-  padding: 10px;
-  opacity: 0.6;
-}
-
-.nextList li i {
-  /* font-size: 20px; */
-  margin-right: 20px;
-  transition: 1s all ease-in-out;
-  border-radius: 50%;
-  padding: 5px;
-}
-.nextList li:hover i {
-  transform: scale(1.7, 1.7);
-  opacity: 1;
-}
 
 @keyframes animateh2 {
   0% {
@@ -901,11 +1085,6 @@ header {
   .intro-text .intro-port {
     font-size: 12px;
     letter-spacing: 4px;
-  }
-  .about-title {
-    font-size: 30px;
-    text-align: center;
-    border: none;
   }
   .about-text p {
     font-size: 15px;
