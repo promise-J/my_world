@@ -562,7 +562,7 @@ header {
   transition: 0.8s ease all;
 }
 .single-project.p-one {
-  background-image: url("../image/socialMern.PNG");
+  background-image: url("../image/schoolSystem.PNG");
 }
 .single-project.p-two {
   background-image: url("../image/react-game.PNG");
@@ -571,7 +571,7 @@ header {
   background-image: url("../image/shopKlassEcommerce.PNG");
 }
 .single-project.p-four {
-  background-image: url("../image/flimzyClient.PNG");
+  background-image: url("../image/flimzyApp.PNG");
 }
 
 .single-project-shadow {
